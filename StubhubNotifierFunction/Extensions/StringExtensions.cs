@@ -13,7 +13,7 @@ namespace StubhubNotifierFunction.Extensions
             var rVal = new List<string>();
             if(string.IsNullOrWhiteSpace(item) == false)
             {
-                rVal = item.Contains(separator) ? item.Split(separator).ToList() : new List<string> { item };
+                rVal = item.Contains(separator) ? item.Split(separator).Where(w => string.IsNullOrWhiteSpace(w) == false).Select(s => s.Trim()).ToList() : new List<string> { item.Trim() };
             }
             return rVal;
         }

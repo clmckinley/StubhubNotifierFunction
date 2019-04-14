@@ -16,8 +16,8 @@ namespace StubhubNotifierFunction
         public static void Run([TimerTrigger("0 */1 * * * *")]TimerInfo myTimer, TraceWriter log, ExecutionContext context)
         {
 
-            var maxPrice = SettingsService.GetSetting("MaxPrice", 30.0);
-            var minTicketCount = SettingsService.GetSetting("MinTicketCount", 50);
+            var maxPrice = SettingsService.GetSetting("MaxPrice", 25.0);
+            var minTicketCount = SettingsService.GetSetting("MinTicketCount", 5);
             var login = SettingsService.GetSetting("StubhubLogin", string.Empty);
             var pass = SettingsService.GetSetting("StubhubPassword", string.Empty);
             var key = SettingsService.GetSetting("StubhubKey", string.Empty);
